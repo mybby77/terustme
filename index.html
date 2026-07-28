@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Server Maintenance</title>
+
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/x77/disini/Untitled%20design%20(7)%20(1).webp">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Orbitron',sans-serif;
+      background:#050816;
+      overflow:hidden;
+      color:#fff;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    /* animated grid */
+    body::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(0,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,.08) 1px, transparent 1px);
+      background-size:40px 40px;
+      animation:gridMove 10s linear infinite;
+      z-index:0;
+    }
+
+    @keyframes gridMove{
+      from{
+        transform:translateY(0);
+      }
+      to{
+        transform:translateY(40px);
+      }
+    }
+
+    .glow{
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:radial-gradient(circle, rgba(0,255,255,.25), transparent 70%);
+      filter:blur(40px);
+      z-index:0;
+      animation:pulse 4s infinite alternate;
+    }
+
+    @keyframes pulse{
+      from{
+        transform:scale(1);
+        opacity:.6;
+      }
+      to{
+        transform:scale(1.2);
+        opacity:1;
+      }
+    }
+
+    .container{
+      position:relative;
+      z-index:2;
+      width:90%;
+      max-width:750px;
+      padding:50px;
+      border:1px solid rgba(0,255,255,.3);
+      background:rgba(10,15,35,.65);
+      backdrop-filter:blur(18px);
+      border-radius:24px;
+      box-shadow:
+        0 0 20px rgba(0,255,255,.2),
+        0 0 60px rgba(255,0,255,.15);
+      text-align:center;
+      overflow:hidden;
+    }
+
+    .container::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:24px;
+      padding:2px;
+      background:linear-gradient(135deg,#00ffff,#ff00ff,#00ffff);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      animation:borderGlow 4s linear infinite;
+    }
+
+    @keyframes borderGlow{
+      0%{
+        filter:hue-rotate(0deg);
+      }
+      100%{
+        filter:hue-rotate(360deg);
+      }
+    }
+
+    h1{
+      font-size:4rem;
+      font-weight:800;
+      color:#00ffff;
+      text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+      margin-bottom:20px;
+      letter-spacing:4px;
+      animation:flicker 2s infinite alternate;
+    }
+
+    @keyframes flicker{
+      0%,18%,22%,25%,53%,57%,100%{
+        opacity:1;
+      }
+      20%,24%,55%{
+        opacity:.5;
+      }
+    }
+
+    p{
+      font-size:1rem;
+      color:#c7d2ff;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    .status{
+      display:inline-block;
+      padding:12px 24px;
+      border:1px solid #00ffff;
+      border-radius:999px;
+      color:#00ffff;
+      font-size:.9rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      box-shadow:0 0 15px rgba(0,255,255,.4);
+      animation:blink 1.5s infinite;
+    }
+
+    @keyframes blink{
+      50%{
+        opacity:.6;
+      }
+    }
+
+    .scanline{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255,255,255,.03) 50%,
+        transparent 100%
+      );
+      animation:scan 6s linear infinite;
+      pointer-events:none;
+      z-index:3;
+    }
+
+    @keyframes scan{
+      from{
+        transform:translateY(-100%);
+      }
+      to{
+        transform:translateY(100%);
+      }
+    }
+
+    .footer{
+      margin-top:35px;
+      font-size:.8rem;
+      color:#7c89b6;
+      opacity:.8;
+    }
+
+    @media(max-width:768px){
+      h1{
+        font-size:2.5rem;
+      }
+
+      .container{
+        padding:35px 25px;
+      }
+
+      p{
+        font-size:.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="glow"></div>
+
+  <div class="container">
+    <div class="scanline"></div>
+
+    <h1>MAINTENANCE</h1>
+
+    <p>
+      Sistem sedang menjalani upgrade dan optimalisasi neural-core.<br>
+      Server akan kembali online dalam beberapa saat.<br><br>
+      Stay connected to the cyber grid.
+    </p>
+
+    <div class="status">
+      SYSTEM REBOOTING...
+    </div>
+
+    <div class="footer">
+      © 2026 🆁🅴🅲 ⚡ CYBER NETWORK SYSTEM
+    </div>
+  </div>
+
+</body>
+</html>
